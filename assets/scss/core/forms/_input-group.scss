@@ -23,7 +23,7 @@
 
 .input-group-text {
     @include transition($input-transition);
-
+  background: rgba(133, 128, 190, 0.12);
 	i {
 		font-size: $font-size-sm;
 	}
@@ -35,7 +35,7 @@
 
 
 .input-group-prepend {
-
+  background: rgba(133, 128, 190, 0.12);
 	// Should add the value of border right in variables.scss
 	.input-group-text {
 		border-right: 0;
@@ -43,7 +43,7 @@
 }
 
 .input-group-append {
-
+  background: rgba(133, 128, 190, 0.12);
 	// Should add the value of border right in variables.scss
 	.input-group-text {
 		border-left: 0;

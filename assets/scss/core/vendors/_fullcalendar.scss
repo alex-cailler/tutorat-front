@@ -152,7 +152,7 @@
 
 // Main Calendar Seasonal headers
 
-[data-calendar-month] {
+/*[data-calendar-month] {
     background-size: contain;
     @include transition(background-image 300ms);
 }
@@ -192,7 +192,7 @@
 }
 [data-calendar-month="11"] {
     background-image: url('../img/calendar/december.jpg');
-}
+}*/
 
 
 // Calendar used inside a card

@@ -1,7 +1,5 @@
 import api from '~/apis';
 
-const plugin = ({$axios}, inject) => {
+export default ({ $axios }, inject) => {
   inject('api', api($axios))
 }
-
-export default plugin;

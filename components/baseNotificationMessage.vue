@@ -1,20 +1,37 @@
 <template>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    Content
+  <div>
+    <b-alert :show="show" dismissible fade :variant="notification.type">
+      {{ notification.message }}
+    </b-alert>
   </div>
 </template>
 
 <script>
 export default {
-name: "baseNotiificationMessage"
-}
+  name: 'base-notification-message',
+  props: ["notification"],
+  data() {
+    return {
+      timeout: null,
+      show: false
+    };
+  },
+  computed: {
+    typeClass() {
+      return `alert-${this.notification.type}`;
+    }
+  },
+  created() {
+    const self = this
+    setTimeout(() => {
+      self.show = true
+    },100)
+    this.timeout = setTimeout(() => {
+      self.$store.dispatch('notifications/removeNotification', self.notification)
+    }, 10000);
+  },
+  beforeDestroy() {
+    clearTimeout(this.timeout);
+  },
+};
 </script>
-
-<style scoped>
-.notifications-list {
-  width: 320px;
-}
-</style>
