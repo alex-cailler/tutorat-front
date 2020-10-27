@@ -12,12 +12,14 @@
 </template>
 
 <script>
+
 import LayoutRadial from "~/layouts/layout-radial";
 import NavLanding from "~/components/navigation/navLanding";
 import LoginForm from "~/components/forms/loginForm";
+
 export default {
   name: "login",
-  components: {LoginForm, NavLanding, LayoutRadial}
+  components: { LoginForm, NavLanding, LayoutRadial }
 }
 </script>
 

@@ -45,7 +45,8 @@
               <span :class="nbrStatusPlaceAvailable(classe.participant_nbr, classe.place_available_nbr)">{{ classe.participant_nbr }} / {{ classe.place_available_nbr }}</span>
             </td>
             <td class="text-center">
-              <b-checkbox button-variant="success" :ref="classe.id" @change="subscribe($event, classe.id, $auth.user.id)" />
+              <b-btn @click="$router.push('/t/classes/details?id='+classe.id)">Voir</b-btn>
+              <!--b-checkbox button-variant="success" :ref="classe.id" @change="subscribe($event, classe.id, $auth.user.id)" /-->
             </td>
           </tr>
           </tbody>
@@ -98,6 +99,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

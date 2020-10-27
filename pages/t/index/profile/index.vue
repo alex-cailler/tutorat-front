@@ -12,6 +12,9 @@
         <b-col lg="8">
           <update-password-card />
         </b-col>
+        <b-col lg="4">
+          <my-teaching-classes />
+        </b-col>
       </b-row>
     </div>
   </layout-logged>
@@ -22,8 +25,9 @@ import LayoutLogged from "@/layouts/layout-logged";
 import PictureProfileCard from "@/components/profile/pictureProfileCard";
 import UpdatePasswordCard from "@/components/forms/updatePasswordForm";
 import UserInformation from "@/components/profile/userInformation";
+import MyTeachingClasses from "@/components/classes/myTeachingClasses";
 export default {
  name: "index",
-  components: {UserInformation, UpdatePasswordCard, PictureProfileCard, LayoutLogged}
+  components: {MyTeachingClasses, UserInformation, UpdatePasswordCard, PictureProfileCard, LayoutLogged}
 }
 </script>

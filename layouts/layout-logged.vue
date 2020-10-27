@@ -20,10 +20,6 @@ import NavLogged from "@/components/navigation/navLogged";
 import BaseNotifications from "@/components/baseNotifications";
 export default {
   name: "layout-logged",
-  components: {BaseNotifications, NavLogged, BaseInput }
+  components: { BaseNotifications, NavLogged, BaseInput }
 }
 </script>
-
-<style scoped>
-
-</style>

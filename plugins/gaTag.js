@@ -2,5 +2,5 @@ import Vue from "vue";
 import VueGtag from "vue-gtag";
 
 Vue.use(VueGtag, {
-  config: { id: "G-Y7BFPH2X73" }
+  config: { id: "GTM-WRBQ6ZR" }
 });

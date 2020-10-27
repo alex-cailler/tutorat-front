@@ -4,4 +4,5 @@ import Vuex from "vuex";
 
 import * as notification from './notifications'
 
+export { notification }
 
