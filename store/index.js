@@ -1,8 +1,6 @@
-import Vue from 'vue';
-import Vuex from "vuex";
+import Vue from "vue"
+import Vuex from "vuex"
 
-
-import * as notification from './notifications'
+import * as notification from "./notifications"
 
 export { notification }
-

@@ -1,15 +1,11 @@
 <template>
-  <div>
-
-  </div>
+  <div />
 </template>
 
 <script>
 export default {
-name: "password-resetForm"
+  name: "PasswordResetForm",
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

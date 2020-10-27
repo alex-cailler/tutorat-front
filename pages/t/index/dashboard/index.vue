@@ -18,14 +18,13 @@
 </template>
 
 <script>
-
-import LayoutLogged from "@/layouts/layout-logged";
-import TopSection from "@/components/dashboard/topSection";
-import MyClasses from "@/components/classes/myClasses";
-import MyTeachingClasses from "@/components/classes/myTeachingClasses";
+import LayoutLogged from "@/layouts/layout-logged"
+import TopSection from "@/components/dashboard/topSection"
+import MyClasses from "@/components/classes/myClasses"
+import MyTeachingClasses from "@/components/classes/myTeachingClasses"
 
 export default {
-  name: "index",
-  components: {MyTeachingClasses, MyClasses, TopSection, LayoutLogged },
+  name: "Index",
+  components: { MyTeachingClasses, MyClasses, TopSection, LayoutLogged },
 }
 </script>

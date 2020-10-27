@@ -9,15 +9,15 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import BaseNotificationMessage from "@/components/baseNotificationMessage";
+import { mapState } from "vuex"
+import BaseNotificationMessage from "@/components/baseNotificationMessage"
 export default {
-  name: 'base-notifications',
+  name: "BaseNotifications",
   components: {
-    BaseNotificationMessage
+    BaseNotificationMessage,
   },
-  computed: mapState(["notifications"])
-};
+  computed: mapState(["notifications"]),
+}
 </script>
 
 <style>

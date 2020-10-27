@@ -1,5 +1,5 @@
-import api from '~/apis';
+import api from "~/apis"
 
 export default ({ $axios }, inject) => {
-  inject('api', api($axios))
+  inject("api", api($axios))
 }

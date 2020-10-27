@@ -3,10 +3,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
       <div class="container">
         <a class="navbar-brand text-primary" href="/">Tutorat</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-default"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" />
         </button>
-        <div class="collapse navbar-collapse" id="navbar-default">
+        <div id="navbar-default" class="collapse navbar-collapse">
           <div class="navbar-collapse-header">
             <div class="row">
               <div class="col-6 collapse-brand">
@@ -15,21 +23,40 @@
                 </a>
               </div>
               <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-                  <span></span>
-                  <span></span>
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar-default"
+                  aria-controls="navbar-default"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span />
+                  <span />
                 </button>
               </div>
             </div>
           </div>
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
-              <base-button tag="button" size="small" rounded @click="$router.push('/auth/register')">
+              <base-button
+                tag="button"
+                size="small"
+                rounded
+                @click="$router.push('/auth/register')"
+              >
                 Inscription
               </base-button>
             </li>
             <li class="nav-item ml-3">
-              <base-button tag="button" size="small" light rounded @click="$router.push('/auth/login')">
+              <base-button
+                tag="button"
+                size="small"
+                light
+                rounded
+                @click="$router.push('/auth/login')"
+              >
                 Connexion
               </base-button>
             </li>
@@ -41,9 +68,9 @@
 </template>
 
 <script>
-import BaseButton from "~/components/baseButton";
+import BaseButton from "~/components/baseButton"
 export default {
-  name: "navLanding",
-  components: {BaseButton}
+  name: "NavLanding",
+  components: { BaseButton },
 }
 </script>

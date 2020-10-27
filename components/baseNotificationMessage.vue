@@ -8,30 +8,33 @@
 
 <script>
 export default {
-  name: 'base-notification-message',
+  name: "BaseNotificationMessage",
   props: ["notification"],
   data() {
     return {
       timeout: null,
-      show: false
-    };
+      show: false,
+    }
   },
   computed: {
     typeClass() {
-      return `alert-${this.notification.type}`;
-    }
+      return `alert-${this.notification.type}`
+    },
   },
   created() {
     const self = this
     setTimeout(() => {
       self.show = true
-    },100)
+    }, 100)
     this.timeout = setTimeout(() => {
-      self.$store.dispatch('notifications/removeNotification', self.notification)
-    }, 10000);
+      self.$store.dispatch(
+        "notifications/removeNotification",
+        self.notification
+      )
+    }, 10000)
   },
   beforeDestroy() {
-    clearTimeout(this.timeout);
+    clearTimeout(this.timeout)
   },
-};
+}
 </script>

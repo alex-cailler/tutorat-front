@@ -1,5 +1,5 @@
 import generic from "./generic"
 
-export default axios => ({
-  ...generic(axios)('matter'),
+export default (axios) => ({
+  ...generic(axios)("matter"),
 })

@@ -3,16 +3,44 @@
     <span class="text-lg font-weight-bold">Difficulté :</span>
     <div class="d-flex">
       <div>
-        <input name="level-radio" id="easy-level-radio" type="radio" checked v-model="selected" class="d-none" value="facile">
+        <input
+          id="easy-level-radio"
+          v-model="selected"
+          name="level-radio"
+          type="radio"
+          checked
+          class="d-none"
+          value="facile"
+        >
         <label class="btn btn-outline-success m-2 btn-sm" for="easy-level-radio">facile</label>
       </div>
       <div>
-        <input name="level-radio" id="normal-level-radio" type="radio" v-model="selected" class="d-none" value="normal" />
-        <label class="btn btn-outline-warning m-2 btn-sm" for="normal-level-radio">normal</label>
+        <input
+          id="normal-level-radio"
+          v-model="selected"
+          name="level-radio"
+          type="radio"
+          class="d-none"
+          value="normal"
+        />
+        <label
+          class="btn btn-outline-warning m-2 btn-sm"
+          for="normal-level-radio"
+        >normal</label>
       </div>
       <div>
-        <input name="level-radio" id="advance-level-radio" type="radio" v-model="selected" class="d-none" value="difficile" />
-        <label class="btn btn-outline-danger m-2 btn-sm" for="advance-level-radio">avancé</label>
+        <input
+          id="advance-level-radio"
+          v-model="selected"
+          name="level-radio"
+          type="radio"
+          class="d-none"
+          value="difficile"
+        />
+        <label
+          class="btn btn-outline-danger m-2 btn-sm"
+          for="advance-level-radio"
+        >avancé</label>
       </div>
     </div>
   </div>
@@ -20,35 +48,32 @@
 
 <script>
 export default {
-  name: "hardLevelChoice",
+  name: "HardLevelChoice",
   data() {
     return {
-      selected: 'facile'
+      selected: "facile",
     }
   },
+  computed: {},
   watch: {
-    selected: function(newVal, oldVal) {
-      if(newVal !== oldVal)
-        this.$emit('input', newVal)
-    }
+    selected: function (newVal, oldVal) {
+      if (newVal !== oldVal) this.$emit("input", newVal)
+    },
   },
-  computed: {
-
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 input[value="facile"]:checked + label {
   background: $success;
-  color: white!important;
+  color: white !important;
 }
 input[value="normal"]:checked + label {
   background: $warning;
-  color: white!important;
+  color: white !important;
 }
 input[value="difficile"]:checked + label {
   background: $danger;
-  color: white!important;
+  color: white !important;
 }
 </style>

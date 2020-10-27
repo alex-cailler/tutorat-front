@@ -21,13 +21,19 @@
 </template>
 
 <script>
-import LayoutLogged from "@/layouts/layout-logged";
-import PictureProfileCard from "@/components/profile/pictureProfileCard";
-import UpdatePasswordCard from "@/components/forms/updatePasswordForm";
-import UserInformation from "@/components/profile/userInformation";
-import MyTeachingClasses from "@/components/classes/myTeachingClasses";
+import LayoutLogged from "@/layouts/layout-logged"
+import PictureProfileCard from "@/components/profile/pictureProfileCard"
+import UpdatePasswordCard from "@/components/forms/updatePasswordForm"
+import UserInformation from "@/components/profile/userInformation"
+import MyTeachingClasses from "@/components/classes/myTeachingClasses"
 export default {
- name: "index",
-  components: {MyTeachingClasses, UserInformation, UpdatePasswordCard, PictureProfileCard, LayoutLogged}
+  name: "Index",
+  components: {
+    MyTeachingClasses,
+    UserInformation,
+    UpdatePasswordCard,
+    PictureProfileCard,
+    LayoutLogged,
+  },
 }
 </script>

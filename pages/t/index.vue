@@ -1,16 +1,16 @@
 <template>
-    <div>
-      <nav-sidebar />
-      <nuxt-child />
-    </div>
+  <div>
+    <nav-sidebar />
+    <nuxt-child />
+  </div>
 </template>
 
 <script>
-import NavSidebar from "@/components/navigation/navSidebar";
-import BaseInput from "@/components/baseInputs";
+import NavSidebar from "@/components/navigation/navSidebar"
+import BaseInput from "@/components/baseInputs"
 export default {
-  name: "index",
-  components: {BaseInput, NavSidebar},
-  middleware: ['auth']
+  name: "Index",
+  components: { BaseInput, NavSidebar },
+  middleware: ["auth"],
 }
 </script>

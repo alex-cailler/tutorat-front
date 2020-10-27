@@ -6,16 +6,14 @@
 
 <script>
 export default {
-  layout: 'empty',
+  layout: "empty",
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

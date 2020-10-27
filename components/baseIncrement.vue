@@ -1,18 +1,22 @@
 <template>
   <div class="increment">
-    <b-button @click="up"><font-awesome-icon icon="chevron-up"/></b-button>
+    <b-button @click="up">
+      <font-awesome-icon icon="chevron-up" />
+    </b-button>
     <div>
       {{ value }}
     </div>
-    <b-button @click="down"><font-awesome-icon icon="chevron-down"/></b-button>
+    <b-button @click="down">
+      <font-awesome-icon icon="chevron-down" />
+    </b-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "baseIncrement",
+  name: "BaseIncrement",
   props: {
-    value: Number
+    value: Number,
   },
   methods: {
     up() {
@@ -20,11 +24,9 @@ export default {
     },
     down() {
       this.value--
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

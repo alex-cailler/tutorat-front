@@ -2,8 +2,8 @@
   <div v-click-outside="closeCard">
     <div @click="isOpen = true">
       <base-input
-        :label="label"
         v-model="input"
+        :label="label"
         name="email"
         class="mb-3"
         type="text"
@@ -14,31 +14,38 @@
       />
     </div>
     <div class="position-relative">
-      <b-card class="position-absolute w-100 card-res p-0 shadow" style="z-index: 50" v-if="results.length > 0 && isOpen" body-class="p-0">
-        <div class="p-3 item" v-for="res in results" @click="setResult(res)">{{ res.libel }}</div>
+      <b-card
+        v-if="results.length > 0 && isOpen"
+        class="position-absolute w-100 card-res p-0 shadow"
+        style="z-index: 50"
+        body-class="p-0"
+      >
+        <div v-for="res in results" class="p-3 item" @click="setResult(res)">
+          {{ res.libel }}
+        </div>
       </b-card>
     </div>
   </div>
 </template>
 
 <script>
-import BaseInput from "@/components/baseInputs";
+import BaseInput from "@/components/baseInputs"
 export default {
-  name: "baseSearch",
-  components: {BaseInput},
+  name: "BaseSearch",
+  components: { BaseInput },
   props: {
     array: {
       type: Array,
     },
     label: {
       type: String,
-    }
+    },
   },
   data() {
     return {
       isOpen: false,
       results: [],
-      input: ''
+      input: "",
     }
   },
   methods: {
@@ -47,28 +54,31 @@ export default {
     },
     search() {
       if (this.input.length > 0)
-        this.results = this.array.filter(r => r.libel.toLowerCase().match(new RegExp(this.input.toLowerCase() + ".*")))
-      else
-        this.results = []
+        this.results = this.array.filter((r) =>
+          r.libel
+            .toLowerCase()
+            .match(new RegExp(this.input.toLowerCase() + ".*"))
+        )
+      else this.results = []
     },
     setResult(item) {
       this.input = item.libel
-      this.$emit('getResultSelected', item.id)
+      this.$emit("getResultSelected", item.id)
       this.isOpen = false
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-  .card-res {
-    transition: all ease-in-out 0.25s;
-  }
-  .item {
-    cursor: pointer;
-  }
-  .item:hover {
-    background: #eeeeee;
-    transition: all ease-in-out 0.25s;
-  }
+.card-res {
+  transition: all ease-in-out 0.25s;
+}
+.item {
+  cursor: pointer;
+}
+.item:hover {
+  background: #eeeeee;
+  transition: all ease-in-out 0.25s;
+}
 </style>

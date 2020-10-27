@@ -1,64 +1,58 @@
 <template>
   <div class="form-group">
     <slot name="label">
-      <label
-        v-if="label"
-        :class="labelClasses">
+      <label v-if="label" :class="labelClasses">
         {{ label }}
       </label>
     </slot>
     <div
       :class="[
-        {'input-group': hasIcon},
-        {'focused': focused},
-        {'input-group-alternative': alternative},
-        {'has-label': label || $slots.label},
-        inputGroupClasses
-    ]">
-      <div
-        v-if="prependIcon || $slots.prepend"
-        class="input-group-prepend">
+        { 'input-group': hasIcon },
+        { focused: focused },
+        { 'input-group-alternative': alternative },
+        { 'has-label': label || $slots.label },
+        inputGroupClasses,
+      ]"
+    >
+      <div v-if="prependIcon || $slots.prepend" class="input-group-prepend">
         <span class="input-group-text">
           <slot name="prepend">
-            <font-awesome-icon :icon="prependIcon"/>
+            <font-awesome-icon :icon="prependIcon" />
           </slot>
         </span>
       </div>
       <slot v-bind="slotData">
         <input
-
           :value="value"
           :type="type"
           v-bind="$attrs"
           :valid="!error"
           :required="required"
           :min="min"
-          :class="[{'is-valid': valid === true}, {'is-invalid': error}, inputClasses]"
+          :class="[
+            { 'is-valid': valid === true },
+            { 'is-invalid': error },
+            inputClasses,
+          ]"
           class="form-control"
-          v-on="listeners">
+          v-on="listeners"
+        >
       </slot>
-      <div
-        v-if="appendIcon || $slots.append"
-        class="input-group-append">
+      <div v-if="appendIcon || $slots.append" class="input-group-append">
         <span class="input-group-text">
           <slot name="append">
-            <font-awesome-icon :icon="prependIcon"/>
+            <font-awesome-icon :icon="prependIcon" />
           </slot>
         </span>
       </div>
-      <slot name="infoBlock"/>
+      <slot name="infoBlock" />
       <slot name="error">
-        <div
-          v-if="error"
-          class="invalid-feedback"
-          style="display: block;">
+        <div v-if="error" class="invalid-feedback" style="display: block">
           {{ error }}
         </div>
       </slot>
       <slot name="success">
-        <div
-          v-if="!error && valid"
-          class="valid-feedback">
+        <div v-if="!error && valid" class="valid-feedback">
           {{ successMessage }}
         </div>
       </slot>
@@ -67,106 +61,107 @@
 </template>
 <script>
 export default {
-  name: 'BaseInput',
+  name: "BaseInput",
   inheritAttrs: false,
   props: {
     required: {
       type: Boolean,
-      description: 'Whether input is required (adds an asterix *)',
-      default: false
+      description: "Whether input is required (adds an asterix *)",
+      default: false,
     },
     group: {
       type: Boolean,
-      description: 'Whether input is an input group (manual override in special cases)',
-      default: false
+      description:
+        "Whether input is an input group (manual override in special cases)",
+      default: false,
     },
     valid: {
       type: Boolean,
-      description: 'Whether is valid',
-      default: undefined
+      description: "Whether is valid",
+      default: undefined,
     },
     alternative: {
       type: Boolean,
-      description: 'Whether input is of alternative layout',
-      default: false
+      description: "Whether input is of alternative layout",
+      default: false,
     },
     label: {
       type: String,
-      description: 'Input label (text before input)',
-      default: ''
+      description: "Input label (text before input)",
+      default: "",
     },
     min: {
       type: [String, Number],
-      description: 'input min number for type number'
+      description: "input min number for type number",
     },
     error: {
       type: String,
-      description: 'Input error (below input)',
-      default: ''
+      description: "Input error (below input)",
+      default: "",
     },
     successMessage: {
       type: String,
-      description: 'Input success message',
-      default: 'Looks good!'
+      description: "Input success message",
+      default: "Looks good!",
     },
     labelClasses: {
       type: String,
-      description: 'Input label css classes',
-      default: 'form-control-label'
+      description: "Input label css classes",
+      default: "form-control-label",
     },
     inputClasses: {
       type: String,
-      description: 'Input css classes',
-      default: ''
+      description: "Input css classes",
+      default: "",
     },
     inputGroupClasses: {
       type: String,
-      description: 'Input group css classes',
-      default: ''
+      description: "Input group css classes",
+      default: "",
     },
     value: {
       type: [String, Number],
-      description: 'Input value',
-      default: ''
+      description: "Input value",
+      default: "",
     },
     type: {
       type: String,
-      description: 'Input type',
-      default: 'text'
+      description: "Input type",
+      default: "text",
     },
     appendIcon: {
       type: String,
-      description: 'Append icon (right)',
-      default: ''
+      description: "Append icon (right)",
+      default: "",
     },
     prependIcon: {
       type: String,
-      description: 'Prepend icon (left)',
-      default: ''
-    }
+      description: "Prepend icon (left)",
+      default: "",
+    },
   },
-  data () {
+  data() {
     return {
-      focused: false
+      focused: false,
     }
   },
   computed: {
-    listeners () {
+    listeners() {
       return {
         ...this.$listeners,
         input: this.updateValue,
         focus: this.onFocus,
-        blur: this.onBlur
+        blur: this.onBlur,
       }
     },
-    slotData () {
+    slotData() {
       return {
         focused: this.focused,
         error: this.error,
-        ...this.listeners
+        ...this.listeners,
       }
     },
-    hasIcon () {
+    hasIcon() {
       const { append, prepend } = this.$slots
       return (
         append !== undefined ||
@@ -175,21 +170,21 @@ export default {
         this.prependIcon !== undefined ||
         this.group
       )
-    }
+    },
   },
   methods: {
-    updateValue (evt) {
+    updateValue(evt) {
       let value = evt.target.value
-      this.$emit('input', value)
+      this.$emit("input", value)
     },
-    onFocus (evt) {
+    onFocus(evt) {
       this.focused = true
-      this.$emit('focus', evt)
+      this.$emit("focus", evt)
     },
-    onBlur (evt) {
+    onBlur(evt) {
       this.focused = false
-      this.$emit('blur', evt)
-    }
-  }
+      this.$emit("blur", evt)
+    },
+  },
 }
 </script>

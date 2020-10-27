@@ -1,6 +1,6 @@
-import Vue from "vue";
-import VueGtag from "vue-gtag";
+import Vue from "vue"
+import VueGtag from "vue-gtag"
 
 Vue.use(VueGtag, {
-  config: { id: "GTM-WRBQ6ZR" }
-});
+  config: { id: "GTM-WRBQ6ZR" },
+})
