@@ -20,7 +20,11 @@
         style="z-index: 50"
         body-class="p-0"
       >
-        <div v-for="res in results" class="p-3 item" @click="setResult(res)">
+        <div v-for="(res, key) in results"
+             :key="key"
+             class="p-3 item"
+             @click="setResult(res)"
+        >
           {{ res.libel }}
         </div>
       </b-card>

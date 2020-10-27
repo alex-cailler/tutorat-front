@@ -22,5 +22,3 @@ export default {
   components: { BaseNotifications },
 }
 </script>
-
-<style scoped></style>

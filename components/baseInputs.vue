@@ -36,7 +36,7 @@
           ]"
           class="form-control"
           v-on="listeners"
-        >
+        />
       </slot>
       <div v-if="appendIcon || $slots.append" class="input-group-append">
         <span class="input-group-text">

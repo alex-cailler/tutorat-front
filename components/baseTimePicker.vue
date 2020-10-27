@@ -9,12 +9,11 @@
 </template>
 
 <script>
-import BaseIncrement from "@/components/baseIncrement"
 import VueTimepicker from "vue2-timepicker/src"
 
 export default {
   name: "BaseTimePicker",
-  components: { BaseIncrement, VueTimepicker },
+  components: { VueTimepicker },
   data() {
     return {
       hour: 0,
@@ -31,5 +30,3 @@ export default {
   },
 }
 </script>
-
-<style scoped></style>
