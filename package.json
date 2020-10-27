@@ -49,7 +49,7 @@
     }
   },
   "lint-staged": {
-    "./src/**/*.(js|jsx|ts|tsx)": [
+    "./(pages|plugins|store|layouts|components|apis}/**/*.(js|vue)": [
       "npm run lintfix"
     ]
   }
